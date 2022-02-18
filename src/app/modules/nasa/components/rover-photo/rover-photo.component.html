@@ -1,0 +1,13 @@
+<mat-card>
+	<mat-card-header>
+		<div mat-card-avatar></div>
+		<mat-card-title>{{roverPhoto.camera.full_name}}</mat-card-title>
+		<mat-card-subtitle>{{roverPhoto.camera.name | lowercase}} </mat-card-subtitle>
+	</mat-card-header>
+	<img mat-card-image [src]="roverPhoto.img_src" />
+	<mat-card-content>
+		<p>Status:{{roverPhoto.rover.status}}</p>
+		<p>Landing Date: {{roverPhoto.rover.landing_date}}</p>
+		<p>Launch Date: {{roverPhoto.rover.launch_date}}</p>
+	</mat-card-content>
+</mat-card>
