@@ -1,0 +1,66 @@
+{
+	"root": true,
+	"ignorePatterns": ["projects/**/*"],
+	"overrides": [
+		{
+			"files": ["*.ts"],
+			"parserOptions": {
+				"project": ["tsconfig.json"],
+				"createDefaultProgram": true
+			},
+			"extends": [
+				"plugin:@angular-eslint/recommended",
+				"eslint:recommended",
+				"plugin:@typescript-eslint/recommended",
+				"plugin:@typescript-eslint/recommended-requiring-type-checking",
+				"plugin:@angular-eslint/template/process-inline-templates",
+				"plugin:prettier/recommended"
+			],
+			"plugins": ["const-case"],
+			"rules": {
+				"const-case/uppercase": "error",
+				"@angular-eslint/directive-selector": [
+					"error",
+					{
+						"type": "attribute",
+						"prefix": "ezpr",
+						"style": "camelCase"
+					}
+				],
+				"@angular-eslint/component-selector": [
+					"error",
+					{
+						"type": "element",
+						"prefix": "ezpr",
+						"style": "kebab-case"
+					}
+				],
+				"prettier/prettier": [
+					"error",
+					{
+						"endOfLine": "auto",
+						"printWidth": 100,
+						"tabWidth": 2,
+						"useTabs": true,
+						"trailingComma": "all"
+					}
+				]
+			}
+		},
+		{
+			"files": ["*.html"],
+			"extends": ["plugin:@angular-eslint/template/recommended", "plugin:prettier/recommended"],
+			"rules": {
+				"prettier/prettier": [
+					"error",
+					{
+						"endOfLine": "auto",
+						"printWidth": 100,
+						"tabWidth": 2,
+						"useTabs": true
+					}
+				]
+			}
+		}
+	]
+}
